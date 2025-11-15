@@ -51,11 +51,11 @@ DELETE http://127.0.0.1:8000/api/restaurants/1/
 Authorization: Bearer {{token}}
 
 
-### 9. Блюдо по ID
+### 8. Блюдо по ID
 GET http://127.0.0.1:8000/api/dishes/1/
 Authorization: Bearer {{token}}
 
-### 10. Добавить блюдо
+### 9. Добавить блюдо
 POST http://127.0.0.1:8000/api/dishes/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -66,7 +66,7 @@ Content-Type: application/json
   "restaurant": 1
 }
 
-### 11. Обновить блюдо
+### 10. Обновить блюдо
 PUT http://127.0.0.1:8000/api/dishes/1/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -76,15 +76,15 @@ Content-Type: application/json
   "price": 150.00
 }
 
-### 12. Удалить блюдо
+### 11. Удалить блюдо
 DELETE http://127.0.0.1:8000/api/dishes/1/
 Authorization: Bearer {{token}}
 
-### 13. Получить корзину
+### 12. Получить корзину
 GET http://127.0.0.1:8000/api/cart/
 Authorization: Bearer {{token}}
 
-### 14. Добавить блюдо в корзину
+### 13. Добавить блюдо в корзину
 POST http://127.0.0.1:8000/api/cart/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -96,7 +96,7 @@ Content-Type: application/json
   ]
 }
 
-### 15. Обновить количество в корзине
+### 14. Обновить количество в корзине
 PUT http://127.0.0.1:8000/api/cart/7/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -106,11 +106,11 @@ Content-Type: application/json
   "quantity": 20
 }
 
-### 16. Удалить блюдо из корзины
+### 15. Удалить блюдо из корзины
 DELETE http://127.0.0.1:8000/api/cart/1/
 Authorization: Bearer {{token}}
 
-### 17. Создать заказ
+### 16. Создать заказ
 POST http://127.0.0.1:8000/api/orders/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -119,15 +119,15 @@ Content-Type: application/json
   "cart_item_ids": [6, 7]
 }
 
-### 18. Заказ по ID
+### 17. Заказ по ID
 GET http://127.0.0.1:8000/api/orders/1/
 Authorization: Bearer {{token}}
 
-### 19. Список заказов пользователя
+### 18. Список заказов пользователя
 GET http://127.0.0.1:8000/api/orders/
 Authorization: Bearer {{token}}
 
-### 20. Изменить статус заказа
+### 19. Изменить статус заказа
 PUT http://127.0.0.1:8000/api/orders/1/status/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -136,11 +136,11 @@ Content-Type: application/json
   "status": "COMPLETED"
 }
 
-### 21. Получить профиль пользователя
+### 20. Получить профиль пользователя
 GET http://127.0.0.1:8000/api/auth/profile/
 Authorization: Bearer {{token}}
 
-### 22. Обновить профиль пользователя
+### 21. Обновить профиль пользователя
 PUT http://127.0.0.1:8000/api/auth/profile/
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -149,4 +149,5 @@ Content-Type: application/json
   "email": "newemail@example.com",
   "first_name": "Test",
   "last_name": "User"
+
 }
