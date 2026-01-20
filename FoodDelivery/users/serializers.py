@@ -6,7 +6,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password')
+        fields = ('username', 'email', 'password') #Почта ни как не проверяется, нету указания обязательности (по умолчанию почта не обязательна)
 
     def create(self, validated_data):
         user = User.objects.create_user(
@@ -19,4 +19,5 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+
         fields = ('id', 'username', 'email', 'first_name', 'last_name')
