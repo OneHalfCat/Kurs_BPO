@@ -6,7 +6,7 @@ from django.core.validators import MinValueValidator
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True) #может быть любой строкой, нет защиты
 
     def __str__(self):
         return self.name
@@ -15,7 +15,7 @@ class Restaurant(models.Model):
 class Dish(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name="dishes")
     name = models.CharField(max_length=100)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True) #может быть любой строкой, нет защиты
     price = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0)])
     is_available = models.BooleanField(default=True)
     
@@ -56,4 +56,5 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
+
         return f"{self.dish.name} x {self.quantity}"
