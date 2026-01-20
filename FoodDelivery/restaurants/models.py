@@ -53,8 +53,9 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="items")  # отдельные позиции заказа
     dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
+    quantity = models.PositiveIntegerField(default=1) #В метод входит также число 0, хотя в заказе не возможно
 
     def __str__(self):
 
         return f"{self.dish.name} x {self.quantity}"
+
