@@ -15,10 +15,11 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
-
+        #Нету проверки уникальности логина в системе
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
 
         fields = ('id', 'username', 'email', 'first_name', 'last_name')
+
 
