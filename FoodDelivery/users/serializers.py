@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 
 class UserRegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
+    password = serializers.CharField(write_only=True) #Пароль ни как не ограничивается, нет минимального размера, нету проверки сложности
 
     class Meta:
         model = User
@@ -21,3 +21,4 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = User
 
         fields = ('id', 'username', 'email', 'first_name', 'last_name')
+
