@@ -7,7 +7,7 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True) #может быть любой строкой, нет защиты
-
+    #нет проверки на, то что ресторан работает, или какой нибудь статус 
     def __str__(self):
         return self.name
 
