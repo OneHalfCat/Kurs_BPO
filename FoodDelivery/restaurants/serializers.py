@@ -32,7 +32,7 @@ class CartItemSerializer(serializers.ModelSerializer):
 
 class OrderSerializer(serializers.ModelSerializer):
     items = CartItemSerializer(many=True, read_only=True)
-    
+    #Необновляется суммарная цена при изменении количества В OrderSerializer нет автоматического пересчета total_price.
     class Meta:
         model = Order
         fields = ['id', 'user', 'items', 'total_price', 'status', 'created_at']
